@@ -383,7 +383,7 @@ class RDA5807M
         void setRegisterBulk(const TRDA5807MRegisterFileWrite *regs);
         void getRegisterBulk(TRDA5807MRegisterFileRead *regs);
 //DO NOT USE (end) -------------------------------------------------------------
-
+        bool setVolume(uint8_t volume);
         /*
         * Description:
         *   Increase the volume by 1. If the maximum volume has been
