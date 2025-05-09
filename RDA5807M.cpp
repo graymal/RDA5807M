@@ -92,6 +92,12 @@ void RDA5807M::getRegisterBulk(TRDA5807MRegisterFileRead *regs) {
         ptr[i] = Wire.read();
 
 };
+bool RDA5807M::setVolume(uint8_t volume){
+    if (volume>15)
+        return false;
+    updateRegister(RDA5807M_REG_VOLUME, RDA5807M_VOLUME_MASK, volume);
+    return true;
+};
 
 bool RDA5807M::volumeUp(void) {
     const byte volume = getRegister(RDA5807M_REG_VOLUME) & RDA5807M_VOLUME_MASK;
